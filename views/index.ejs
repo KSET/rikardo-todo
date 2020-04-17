@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Ricardo TODO App</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>A Simple ToDo List App</h2>
+      <form action="/task" method="POST" autocomplete="off">
+        <input type="text" name="description" placeholder="Add new task" />
+        <button type="submit">Add Task</button>
+      </form>
+
+      <h2>ToDo</h2>
+      <% for(const task of tasks.filter(({ done }) => !done)) { %>
+      <li>
+        <form action="/task/complete" method="POST">
+          <%= task.description %>
+          <button type="submit">Complete</button>
+          <button formaction="/task/delete">Delete</button>
+          <input type="hidden" name="id" value="<%= task.id %>" />
+        </form>
+      </li>
+      <% } %>
+
+      <h2>Completed</h2>
+      <% for(const task of tasks.filter(({ done }) => done)) { %>
+      <li>
+        <form action="/task/uncomplete" method="POST">
+          <strike><%= task.description %></strike>
+          <button type="submit">Un-Complete</button>
+          <button formaction="/task/delete">Delete</button>
+          <input type="hidden" name="id" value="<%= task.id %>" />
+        </form>
+      </li>
+      <% } %>
+    </div>
+  </body>
+</html>
