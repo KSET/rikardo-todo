@@ -6,8 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Ricardo Milos",
   "license": "GPL-2.0",
+  "engines": {
+    "node": ">=12.0"
+  },
   "dependencies": {
     "body-parser": "^1.19.0",
     "consola": "^2.11.3",

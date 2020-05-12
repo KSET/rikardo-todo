@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 // https://www.youtube.com/watch?v=pldDuqnPP1s
 const mariadb = require("mariadb");
 const consola = require("consola");
